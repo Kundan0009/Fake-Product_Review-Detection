@@ -55,10 +55,10 @@ class SyntheticLabelGenerator:
         )
         return df
     
-    def generate_labels(self, df, sample_size=50000):
+    def generate_labels(self, df, sample_size=200000):
         """Generate fake/real labels based on multiple heuristics"""
         print(f"Original dataset: {len(df)} reviews")
-        print(f"Sampling {sample_size} reviews for faster processing...")
+        print(f"Sampling {sample_size} reviews for training...")
         
         # Sample for faster processing (remove this line for full dataset)
         df = df.sample(n=min(sample_size, len(df)), random_state=42).reset_index(drop=True)
